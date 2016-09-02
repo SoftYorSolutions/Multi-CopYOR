@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="ccpAppModule" ng-controller="ccpAppCtrl as ccpAppC">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">  
+        <title>{{appInfo.name}} {{appInfo.version}}</title>
+        <link rel="stylesheet prefetch" href="./asset/css/lib/angular-material.min.css">
+        <link rel="stylesheet " href="./asset/css/app/ccp.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet prefetch"> 
+    </head>
+    <body >
+        <md-toolbar class="">
+            <div class="md-toolbar-tools ccpToolbar" ng-cloak>
+                <h2 class="md-flex">{{appInfo.name}}</h2>
+                <span flex></span>
+                 <md-switch ng-model="actionParam" class="md-warn" >
+                      <md-tooltip md-direction="bottom" ng-if="actionParam==false">Toggle to Start</md-tooltip>
+                      <md-tooltip md-direction="bottom" ng-if="actionParam">Toggle to Stop</md-tooltip>
+                </md-switch>
+                <md-icon md-svg-src="./asset/img/lib/ic_help_outline_white_24px.svg" ng-click="help()" aria-label="Trash"  >
+                        <md-tooltip md-direction="bottom">Help</md-tooltip>
+                </md-icon>
+            </div>
+         </md-toolbar>
+        <md-content flex layout-padding class="ccpCacheListClass">    
+            <md-list ng-cloak>
+                <md-list-item ng-repeat="oneCCP in ccpAppC.ccpCache | orderBy:'$index':true"  
+                              ng-click="use($index, $event)" 
+                              ng-class="($index == 0 && actionParam==true && isValidCopy ) ? 'ccpCacheListItemClassActive' : 'ccpCacheListItemClass'"
+                              class="noright">
+                    <p>{{ oneCCP | limitTo:30 }} 
+                       <strong ng-if="oneCCP.length > 30">
+                            ...
+                        </strong>
+                    </p>
+                    <md-icon md-svg-src="./asset/img/lib/ic_touch_app_black_24px.svg" ng-if="($index == 0 && isValidCopy==false) ||  $index != 0 || actionParam==false" ng-click="use($index, $event)"  aria-label="Trash"  >
+                        <md-tooltip md-direction="bottom">Use</md-tooltip>
+                    </md-icon>
+                    <md-icon md-svg-src="./asset/img/lib/ic_delete_black_24px.svg"  ng-if="($index == 0 && isValidCopy==false) ||  $index != 0 || actionParam==false" ng-click="remove($index, $event)" aria-label="Trash"  >
+                        <md-tooltip md-direction="bottom">Delete</md-tooltip>
+                    </md-icon>
+                    <md-divider></md-divider>
+                </md-list-item>
+            </md-list>
+        </md-content>
+        <md-content flex layout-padding class="ccpFooterClass">   
+            &copy; 2016 <a href="#" class="ccpFooterAClass" ng-click="website()">www.SoftYor.com</a>
+            <br>
+            <a href="#" class="ccpFooterAClass" style="text-align: right" ng-click="contact()">Contact Us</a>
+        </md-content>
+    </body>
+
+    <script>
+        require('./renderer.js')
+    </script>
+    <script src="./asset/js/lib/angular.min.js"></script>
+    <script src="./asset/js/lib/angular-animate.min.js"></script>
+    <script src="./asset/js/lib/angular-aria.min.js"></script>
+    <script src="./asset/js/lib/angular-messages.min.js"></script>
+    <script src="./asset/js/lib/angular-material.min.js"></script>
+    <script src="./asset/js/lib/svg-assets-cache.js"></script>
+    <script>
+        require('./asset/js/app/ccp.js')
+    </script>
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src='https://www.google-analytics.com/analytics.js';m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        var GA_LOCAL_STORAGE_KEY = 'ga:clientId';
+
+        ga('create', "UA-65288064-4", 'auto', {
+           'storage': 'none',
+           'clientId': localStorage.getItem(GA_LOCAL_STORAGE_KEY)
+        });
+
+        ga(function(tracker) {
+           localStorage.setItem(GA_LOCAL_STORAGE_KEY, tracker.get('clientId'));
+        });
+
+        ga('set', 'location', 'https://www.softyor.com/Multi-CopYOR');
+    </script>
+    
+</html>

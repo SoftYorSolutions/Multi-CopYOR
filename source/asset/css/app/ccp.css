@@ -1,0 +1,61 @@
+.ccpCacheListClass md-list {
+  padding-top: 0; }
+.ccpCacheListClass md-list-item > p,
+.ccpCacheListClass md-list-item > .md-list-item-inner > p,
+.ccpCacheListClass md-list-item .md-list-item-inner > p,
+.ccpCacheListClass md-list-item .md-list-item-inner > .md-list-item-inner > p {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+  /* Likely future */ }
+
+
+.ccpCacheListClass{
+    max-height: 250px;
+    height: 250px;
+    background-color: #dadada;
+}
+.ccpCacheListItemClass{
+    background-color: #efe1b2;
+}
+.ccpCacheListItemClassActive{
+    background-color: #f44336;
+}
+.ccpFooterClass, .ccpFooterAClass {
+    color: #FFF;
+    height: 100%;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    background: #543958;
+  /* padding-top: 20px;*/
+    letter-spacing: 2px;
+    line-height: 17px
+}
+body{
+    overflow: hidden;
+    background-color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+}
+
+md-toast{
+    background: #68bc17;
+    color: #000;
+    text-align: center;
+}
+
+md-tooltip{
+    background-color: #68bc17;
+    color: #FFF;
+    text-align: center;
+   
+}
+
+.ccpToolbar {
+    background-color: #543958;
+}

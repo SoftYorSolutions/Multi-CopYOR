@@ -1,0 +1,23 @@
+{
+  "name": "Multi-CopYOR",
+  "version": "1.0.0",
+  "description": "A Multiple Copy Paste Utility",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electron/electron-quick-start.git"
+  },
+  "keywords": [
+    "Multiple Copy Paste"
+  ],
+  "author": "Softyor Solutions",
+  "license": "CC0-1.0",
+  
+  "homepage": "http://www.softyor.com",
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.0"
+  }
+}
