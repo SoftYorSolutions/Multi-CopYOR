@@ -1,8 +1,8 @@
 Multi-CopYOR
 ============
 A Electron Opensource app which enables multiple copy paste. We often face this in whichever profession we are working with, Multi-CopYOR is the solution which enables you to copy multiple and switch between your multiple copy-paste buffer.
-To see source checkout from [here] (https://github.com/SoftYorSolutions/Multi-CopYOR)
-To download the installer clik [here] (https://github.com/SoftYorSolutions/Multi-CopYOR/blob/master/binary/Multi-CopYOR-win32-ia32%20Installer.exe) 
+*  see source checkout from [here] (https://github.com/SoftYorSolutions/Multi-CopYOR)
+* To download the installer click [here] (https://github.com/SoftYorSolutions/Multi-CopYOR/blob/master/binary/Multi-CopYOR-win32-ia32%20Installer.exe) 
 
 Use cases
 ---------
